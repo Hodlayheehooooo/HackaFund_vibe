@@ -11,11 +11,29 @@ export type BaseConfig = {
 
 export type ScaffoldConfig = BaseConfig;
 
+export const xdcApothem = {
+  id: 51,
+  name: "XDC Apothem",
+  nativeCurrency: { name: "XDC", symbol: "XDC", decimals: 18 },
+  rpcUrls: {
+    default: {
+      http: ["https://rpc.ankr.com/xdc_testnet"],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: "XDC Explorer",
+      url: "https://explorer.apothem.network",
+    },
+  },
+  testnet: true,
+} as const satisfies chains.Chain;
+
 export const DEFAULT_ALCHEMY_API_KEY = "oKxs-03sij-U_N0iOlrSsZFr29-IqbuF";
 
 const scaffoldConfig = {
   // The networks on which your DApp is live
-  targetNetworks: [chains.hardhat],
+  targetNetworks: [xdcApothem],
   // The interval at which your front-end polls the RPC servers for new data (it has no effect if you only target the local network (default is 4000))
   pollingInterval: 30000,
   // This is ours Alchemy's default API key.

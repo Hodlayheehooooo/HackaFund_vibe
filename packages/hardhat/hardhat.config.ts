@@ -125,6 +125,11 @@ const config: HardhatUserConfig = {
       url: "https://alfajores-forno.celo-testnet.org",
       accounts: [deployerPrivateKey],
     },
+    apothem: {
+      url: "https://rpc.ankr.com/xdc",
+      accounts: [deployerPrivateKey],
+      chainId: 51,
+    },
   },
   // Configuration for harhdat-verify plugin
   etherscan: {
